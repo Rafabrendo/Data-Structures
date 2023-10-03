@@ -31,16 +31,29 @@ public class Pilha {
         return refNoEntradaPilha == null ? true : false;
     }
 
-    @Overridepublic String toString(){
+    @Override
+    public String toString(){
+
         String stringReorno = "----------\n";
-        stringReorno += "    Pilha\n";
+        stringReorno += "    Pilha   \n";
         stringReorno += "----------\n";
 
         No noAuxiliar = refNoEntradaPilha;
+        //No que vou usar para percorrer a pilha
 
         while(true){
-            
+            if(noAuxiliar != null){
+                stringReorno += "[No{dado=" + noAuxiliar.getDado() + "}]\n";
+                noAuxiliar = noAuxiliar.getRefNo(); //recebe a referencia para o próximo nó
+
+
+            }else{
+                break;
+            }
         }
+        stringReorno += "===========\n";
+        return stringReorno;
+
     }
 
 }
