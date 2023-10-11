@@ -56,7 +56,7 @@ public class ListaEncadeada<T>{
 
         No<T> noAnterior = getNo(index - 1);
         noAnterior.setProximoNo(noPivor.getProximoNo());
-        return noPivor.getConteudo();
+        return noPivor.getConteudo(); //ultima referência ao index que se quer remover
     }
 
 
@@ -91,4 +91,18 @@ public class ListaEncadeada<T>{
         }
     }
 
+    @Override
+    public String toString() {
+        String strRetorno = "";
+        No<T> noAuxiliar = referenciaEntrada;
+        for(int i=0; i < this.size(); i++){
+            strRetorno += "[No{Conteudo=" + noAuxiliar.getConteudo() + "}--->";
+            noAuxiliar = noAuxiliar.getProximoNo();
+        }
+
+        strRetorno += "null";
+
+
+        return strRetorno;
+    }
 }
