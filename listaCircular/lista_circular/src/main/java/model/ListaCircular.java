@@ -72,5 +72,13 @@ public class ListaCircular<T> {
         return this.tamanhoLista;
     }
 
+    @Override
+    public String toString() {
+        String strRetorno = "";
 
+        No<T> noAuxiliar = this.cauda;
+        
+
+        return strRetorno;
+    }
 }
