@@ -82,13 +82,14 @@ public class ArvoreBinaria<T extends Comparable<T>>{
             if(atual == null){
                 System.out.println("Conteudo nao encontrado. Bloco Try");
             }
-
+            //Etapa de rearranjo, onde se tira o que se quer e rearranja o resto
             if(pai == null){
                 if(atual.getNoDir() == null){
                     this.raiz = atual.getNoEsq();
                 }else if(atual.getNoEsq() == null){
                     this.raiz = atual.getNoDir();
                 }else{
+                    //Condição inicial; condição de parada; parte de incremento
                     for(temp = atual, filho = atual.getNoEsq();
                         filho.getNoDir() != null;
                         temp = filho, filho = filho.getNoEsq()
@@ -102,7 +103,11 @@ public class ArvoreBinaria<T extends Comparable<T>>{
                     raiz = filho;
                 }
             }else if(atual.getNoDir() == null){
-
+                if(pai.getNoEsq() == atual){
+                    pai.setNoEsq(atual.getNoEsq());
+                } else {
+                    pai.setNoDir(atual.getNoEsq());
+                }
             }else if(atual.getNoEsq() == null){
 
             }else{
