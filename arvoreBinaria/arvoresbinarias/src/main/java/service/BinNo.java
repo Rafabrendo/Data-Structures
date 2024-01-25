@@ -1,4 +1,4 @@
-package model;
+package service;
 
 public class BinNo<T extends Comparable<T>>{
 
