@@ -27,13 +27,15 @@ public class Obj extends ObjArvore<Obj>{
     public int compareTo(Obj outro) {
         int i = 0;
 
-        if(){
-
-        }
+        if(this.meuValor > outro.meuValor){
+            i = 1;
+        } else if (this.meuValor < outro.meuValor){
+            i = -1;
+        }return i;
     }
 
     @Override
     public String toString() {
-        return null;
+        return meuValor.toString();
     }
 }
